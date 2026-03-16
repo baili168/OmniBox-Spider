@@ -2,7 +2,7 @@
 // @author 
 // @description 刮削：支持，弹幕：支持，嗅探：支持
 // @dependencies: axios, cheerio
-// @version 1.1.3
+// @version 1.1.4
 // @downloadURL https://gh-proxy.org/https://github.com/Silent1566/OmniBox-Spider/raw/refs/heads/main/影视/采集/在线之家.js
 
 /**
@@ -383,7 +383,7 @@ async function category(params, context) {
         const list = parseVideoList($, baseURL);
         
         logInfo(`获取到 ${list.length} 个视频`);
-        return { list: list, page: pg, pagecount: list.length >= 20 ? pg + 1 : pg };
+        return { list: list, page: pg, pagecount: list.length >= 12 ? pg + 1 : pg };
     } catch (e) {
         logError("分类请求失败", e);
         return { list: [], page: pg, pagecount: 0 };
